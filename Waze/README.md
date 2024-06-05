@@ -11,5 +11,5 @@ Waze’s free navigation app makes it easier for drivers around the world to get
 
 ![image](https://github.com/RoniF-pixel/Projects/assets/121540731/3f0eefab-39f9-402a-a48a-f6631df6f38e)
 
-- If the model is used to drive consequential business decisions, the model is not a strong enough predictor, as made clear by its poor recall score. However, if the model is only being used to guide further exploratory efforts, then it can have value.
+- If the model is used to drive consequential business decisions, it is not a strong enough predictor, as made clear by its poor recall score. However, if the model is only being used to guide further exploratory efforts, then it can have value.
 - New features could be engineered to try to generate better predictive signal, as they often do if we have domain knowledge. In the case of this model, the engineered features made up over half of the top 10 most-predictive features used by the model. It could also be helpful to reconstruct the model with different combinations of predictor variables to reduce noise from unpredictive features.
