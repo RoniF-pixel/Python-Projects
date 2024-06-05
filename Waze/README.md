@@ -8,7 +8,7 @@ Waze’s free navigation app makes it easier for drivers around the world to get
 
 - We found out that the users who churned drove farther and longer in fewer days than retained users. They also used the app about half as many times as retained users over the same period.
 - Less than 18% of users churned, and ~82% were retained.
-- We engineered a feature to see their impact on churning called kilometers per driving day, Then we engineered a new, binary feature called professional_driver that separates professional drivers from other drivers. The churn rate for professional drivers is 7.6%, while the churn rate for non-professionals is 19.9%.
+- We engineered features to see their impact on churning called kilometers per driving day, percent_sessions_in_last_month that represents the percentage of each user's total sessions that were logged in their last month of use, total_sessions_per_day, km_per_hour, km_per_drive, and percent_of_sessions_to_favorite. Then a new, binary feature called professional_driver that separates professional drivers from other driversThe churn rate for professional drivers is 7.6%, while the churn rate for non-professionals is 19.9%.
 - The XGBoost model fit the data better than the random forest model. The recall score is nearly double the recall score from the logistic regression model, and it's almost 50% better than the random forest model's recall score, while maintaining a similar accuracy and precision score.
 - The model predicted three times as many false negatives than it did false positives, and it correctly identified only 16.6% of the users who actually churned.
 
