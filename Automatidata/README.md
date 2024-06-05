@@ -8,5 +8,6 @@ from this dataset:
  ![image](https://github.com/RoniF-pixel/Projects/assets/121540731/00f5dcff-5858-4512-8253-f94972e13fc5)
 - In connection to this, a feature was engineered to represent if a ride was taken during rush hour or not. Multiple redundant columns were dropped and reformatted into the proper data type.
 - A random forest model comprising 100 decision trees was used to determine feature importance in who would tip generously or not. The below plot shows that trip duration, distance, and the cost of a fare were the Top 3 most important factors in determining a generous tipper from a non-generous one. The overall model performed with 68% accuracy and 67% precision. 
-![image](https://github.com/RoniF-pixel/Projects/assets/121540731/0f2d8977-9d90-4026-b83a-062f47d91daf)
+![auto-important](https://github.com/RoniF-pixel/Projects/assets/121540731/107ae1fd-16c1-4268-9b57-12332020a71a)
+
 - This model can benefit Taxi Drivers in knowing if they will be tipped generously or not; however, running a parametric model to determine how much each variable will influence the actual price of the tip. In the future, adding more information on a rider’s past tipping behavior may also be beneficial in helping the stakeholder address their business problem. 
