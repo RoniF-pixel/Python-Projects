@@ -48,6 +48,11 @@ Findings:
 - About 9% out of the hospitalized patients were admitted to the ICU, with about 56% of them being classified as Covid carriers, and with a great percentage of death of about 49%.
 - The death was very trending during mid 2020 starting from April up till August.
 
+![1 covid](https://github.com/user-attachments/assets/b7f58070-49e7-4a12-ba26-cb6956d80d33)
+
+![2 covid](https://github.com/user-attachments/assets/c6ceb83e-feb1-477e-a8ad-25e490ad38cb)
+
+
 Conclusion:
 
 From the above results we can see that althogh we got the highest accuracy (about 92%) from both Decision Tree & Random Forrest algorithms, but the recall was very bad in the "Dead" class, and since we care the most about our "false negatives" (predicting a patient to be having no risks, while he/she is actually at high risk) which results in type 2 error; our judgement will be based on the recall and here's where those algorithms fail with their misleading accuracy.
