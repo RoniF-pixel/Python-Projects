@@ -1,6 +1,6 @@
 
 
-#  COVID-19 Risk Classification & Analysis (Python)
+#  COVID-19 Risk Classification & Analysis
 
 This project aims to classify patient risk levels (specifically mortality) during the COVID-19 pandemic using clinical and demographic variables. We implemented various machine learning models to predict patient outcomes and performed exploratory data analysis to uncover meaningful relationships between comorbidities, symptoms, and COVID-19 severity.
 
@@ -59,11 +59,13 @@ This project aims to classify patient risk levels (specifically mortality) durin
 
 [GitHub Link to Project](https://github.com/RoniF-pixel/Python-Projects/tree/main/Covid-19)
 
+## References
 
 The dataset is obtained from Kaggle at the following link: [kaggle](https://www.kaggle.com/datasets/meirnizri/covid19-dataset), 
 and was provided by the Mexican government, which can be found at this link: 
 [Mexican government data](https://datos.gob.mx/busca/dataset/informacion-referente-a-casos-covid-19-en-mexico)
 
+## Visuals
 
 ![1 covid](https://github.com/user-attachments/assets/b7f58070-49e7-4a12-ba26-cb6956d80d33)
 
