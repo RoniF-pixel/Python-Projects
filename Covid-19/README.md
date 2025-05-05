@@ -1,65 +1,73 @@
-Introduction:
 
-Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus. Most people infected with COVID-19 virus will experience mild to moderate respiratory illness and recover without requiring special treatment. Older people, and those with underlying medical problems like cardiovascular disease, diabetes, chronic respiratory disease, and cancer are more likely to develop serious illness. During the entire course of the pandemic, one of the main problems that healthcare providers have faced is the shortage of medical resources and a proper plan to efficiently distribute them. In these tough times, being able to predict what kind of resource an individual might require at the time of being tested positive or even before that will be of immense help to the authorities as they would be able to procure and arrange for the resources necessary to save the life of that patient. Machine learning models offer promising prospects in this regard.
-The main goal of this project is to build a machine learning model that, given a Covid-19 patient's current symptom, status, and medical history, will predict whether the patient is at high risk or not.
 
-Methodology:
+#  COVID-19 Risk Classification & Analysis (Python)
 
-This study employs five distinct machine learning models: Logistic Regression, Decision tree classifier, Random forest classifier, Naive Bayes, and XGBoost classifier. These models are applied to analyze medical data accurately. This dataset contains an enormous number of anonymized patient-related information including pre-conditions. The raw dataset consists of 21 unique features and 1,048,576 unique patients. In the Boolean features, 1 means "yes" and 2 means "no". values as 97 and 99 are missing data. The features can be explained as follows:
+This project aims to classify patient risk levels (specifically mortality) during the COVID-19 pandemic using clinical and demographic variables. We implemented various machine learning models to predict patient outcomes and performed exploratory data analysis to uncover meaningful relationships between comorbidities, symptoms, and COVID-19 severity.
 
-- sex: 1 for female and 2 for male.
-- age: of the patient.
-- classification: covid test findings. Values 1-3 mean that the patient was diagnosed with covid in different degrees. 4 or higher means that the patient is not a carrier of covid or that the test is inconclusive.
-- patient type: type of care the patient received in the unit. 1 for returned home and 2 for hospitalization.
-- pneumonia: whether the patient already have air sacs inflammation or not.
-- pregnancy: whether the patient is pregnant or not.
-- diabetes: whether the patient has diabetes or not.
-- copd: Indicates whether the patient has Chronic obstructive pulmonary disease or not.
-- asthma: whether the patient has asthma or not.
-- inmsupr: whether the patient is immunosuppressed or not.
-- hypertension: whether the patient has hypertension or not.
-- cardiovascular: whether the patient has heart or blood vessels related disease.
-- renal chronic: whether the patient has chronic renal disease or not.
-- other disease: whether the patient has other disease or not.
-- obesity: whether the patient is obese or not.
-- tobacco: whether the patient is a tobacco user.
-- usmr: Indicates whether the patient treated medical units of the first, second or third level.
-- medical unit: type of institution of the National Health System that provided the care.
-- intubed: whether the patient was connected to the ventilator.
-- icu: Indicates whether the patient had been admitted to an Intensive Care Unit.
-- date died: If the patient died indicate the date of death, and 9999-99-99 otherwise.
+##  Repository Structure
 
-The dataset is obtained from Kaggle at the following link: https://www.kaggle.com/datasets/meirnizri/covid19-dataset, and was provided by the Mexican government, which can be found at this link: https://datos.gob.mx/busca/dataset/informacion-referente-a-casos-covid-19-en-mexico
+- `data/`: Raw dataset (de-identified for privacy)
+- `notebooks/`: EDA and model development notebooks
+- `models/`: Trained model outputs and performance evaluations
+- `tables_figures/`: Key summary tables and diagnostic plots
+- `results/`: Final reports and interpretive summaries
 
-Findings:
+##  Project Overview
 
-- Unfortunately 7.3% of the total patients have died, with about 70.5% of them were Covid Carriers.
-- As for the total carriers they were about 37.5% out of the total patients.
-- About 14% of those carriers have died.
-- We found that age has a significant impact; as it increases chances of getting the virus increases.
-- We also found that people who are suffering from obesity are more likely to carry the virus.
-- As for pregnancy, we couldn't find any impact on Covid classification.
-- We noticed that patients with "Pneumonia", "Hypertension", "Diabetes" and tobacco users have a great chance of getting the virus with "Pneumonia" patients being the most.
-- We also noticed that there's a positive correlation between having "Hypertension" and "Diabetes" diseases; as most patients with one of those two diseases are subjected to get the other.
-- We saw that among all the patients of these diseases the patients classified with 3rd degree of Covid are the highest by far.
-- About 19% of the total patients were hospitalized, with a death percentage of 35%.
-- The "Pneumonia" disease has the greatest impact on that percentage (35%).
-- About 91% of the dead patients were hospitalized.
-- About 9% out of the hospitalized patients were admitted to the ICU, with about 56% of them being classified as Covid carriers, and with a great percentage of death of about 49%.
-- The death was very trending during mid 2020 starting from April up till August.
+- **Objective**: Predict mortality risk among COVID-19 patients based on symptoms, comorbidities, and demographic data.
+- **Tools**: Python, Scikit-learn, Statsmodels, Pandas, Matplotlib, Seaborn, Tableau
+- **Techniques**: Logistic Regression, Decision Trees, Random Forests, Naive Bayes, Oversampling, Confusion Matrix Analysis
+
+##  Key Models & Performance
+
+| Model               | Accuracy | Recall ("Dead") | Recall ("Not Dead") | Comments                                                                 |
+|--------------------|----------|------------------|----------------------|--------------------------------------------------------------------------|
+| Logistic Regression | 90%      | **91%**          | 90%                  | Best balance of recall and interpretability                              |
+| Naive Bayes         | 88%      | 88%              | 88%                  | Simple model, decent performance                                         |
+| Decision Tree       | 92%      | 68%              | 96%                  | High accuracy, **poor recall** on "Dead" class                           |
+| Random Forest       | 92%      | 70%              | 95%                  | Similar to Decision Tree; suffers from Type II errors on minority class  |
+
+ **Conclusion**: While tree-based models achieved the highest accuracy, their recall for the "Dead" class was insufficient, risking dangerous false negatives. Logistic regression offered the best balance between sensitivity and specificity for high-risk classification.
+
+##  Key Findings
+
+- **Mortality**: 7.3% of all patients died. Of those, 70.5% were confirmed COVID-19 carriers.
+- **Infection Rate**: 37.5% of patients were COVID-19 positive. Among them, ~14% died.
+- **Age Effect**: Older individuals had a significantly higher risk of infection and death.
+- **Obesity**: Strongly correlated with increased likelihood of being a COVID-19 carrier.
+- **Comorbidities**: Patients with pneumonia, hypertension, and diabetes had a higher probability of infection and severe outcomes.
+- **Hospitalization**:
+  - 19% of all patients were hospitalized.
+  - Of those, 35% died.
+  - 91% of deceased patients had been hospitalized.
+  - 9% were admitted to the ICU, nearly half of whom died.
+- **Temporal Trends**: Peak death rate occurred from April to August 2020.
+
+##  Data Considerations
+
+- Oversampling was used to address class imbalance, which may have introduced noise.
+- Future improvements could include undersampling or synthetic sampling (e.g., SMOTE).
+- Feature selection and multicollinearity assessment were considered using Statsmodels and correlation plots.
+
+##  Lessons Learned
+
+- High accuracy does not imply reliability, especially with imbalanced data.
+- Prioritizing recall on minority/high-risk classes (like "Dead") is critical in health-related classification problems.
+- Logistic regression, though simple, can be robust and interpretable when used thoughtfully.
+
+##  Repository
+
+[GitHub Link to Project](https://github.com/RoniF-pixel/Python-Projects/tree/main/Covid-19)
+
+
+The dataset is obtained from Kaggle at the following link: [kaggle](https://www.kaggle.com/datasets/meirnizri/covid19-dataset), 
+and was provided by the Mexican government, which can be found at this link: 
+[Mexican government data](https://datos.gob.mx/busca/dataset/informacion-referente-a-casos-covid-19-en-mexico)
+
 
 ![1 covid](https://github.com/user-attachments/assets/b7f58070-49e7-4a12-ba26-cb6956d80d33)
 
 ![2 covid](https://github.com/user-attachments/assets/c6ceb83e-feb1-477e-a8ad-25e490ad38cb)
-
-
-Conclusion:
-
-From the above results we can see that althogh we got the highest accuracy (about 92%) from both Decision Tree & Random Forrest algorithms, but the recall was very bad in the "Dead" class, and since we care the most about our "false negatives" (predicting a patient to be having no risks, while he/she is actually at high risk) which results in type 2 error; our judgement will be based on the recall and here's where those algorithms fail with their misleading accuracy.
-
-So, from the point of view of both the accuracy and the recall togther, the best model was the "Logistic Regression" with about 90% accuracy and lowest recall ("Not dead" class), and even a bit higher recall in the "Dead" class (about 91%).
-
-Comes next the "Naive Bayes" with an accuracy of 88% and with a lowest recall of 88% (both classes). We can also notice that we sacrificed both the precision and f1 score which came pretty low in every report. Probably, we could've achieved better results if we undersampled our train dataset instead of oversampling it (as it will reduce the great noise in our data), but this could have resulted in losing a great portion of our data, and thus losing it's integrity.
 
 
 
