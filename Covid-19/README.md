@@ -4,21 +4,18 @@
 
 This project aims to classify patient risk levels (specifically mortality) during the COVID-19 pandemic using clinical and demographic variables. We implemented various machine learning models to predict patient outcomes and performed exploratory data analysis to uncover meaningful relationships between comorbidities, symptoms, and COVID-19 severity.
 
-##  Repository Structure
-
-- `data/`: Raw dataset (de-identified for privacy)
-- `notebooks/`: EDA and model development notebooks
-- `models/`: Trained model outputs and performance evaluations
-- `tables_figures/`: Key summary tables and diagnostic plots
-- `results/`: Final reports and interpretive summaries
-
-##  Project Overview
+##  📌Project Overview
 
 - **Objective**: Predict mortality risk among COVID-19 patients based on symptoms, comorbidities, and demographic data.
 - **Tools**: Python, Scikit-learn, Statsmodels, Pandas, Matplotlib, Seaborn, Tableau
-- **Techniques**: Logistic Regression, Decision Trees, Random Forests, Naive Bayes, Oversampling, Confusion Matrix Analysis
+- **Data Source**: Mexican government health data via Kaggle
+- **Techniques**:
+     - Logistic Regression, Decision Trees, Random Forests, Naive Bayes
+     - Class imbalance handling via oversampling
+     - Confusion matrix analysis and recall prioritization
 
-##  Key Models & Performance
+
+##  ⚙️Key Models & Performance
 
 | Model               | Accuracy | Recall ("Dead") | Recall ("Not Dead") | Comments                                                                 |
 |--------------------|----------|------------------|----------------------|--------------------------------------------------------------------------|
@@ -29,7 +26,7 @@ This project aims to classify patient risk levels (specifically mortality) durin
 
  **Conclusion**: While tree-based models achieved the highest accuracy, their recall for the "Dead" class was insufficient, risking dangerous false negatives. Logistic regression offered the best balance between sensitivity and specificity for high-risk classification.
 
-##  Key Findings
+##  🔍Key Findings
 
 - **Mortality**: 7.3% of all patients died. Of those, 70.5% were confirmed COVID-19 carriers.
 - **Infection Rate**: 37.5% of patients were COVID-19 positive. Among them, ~14% died.
@@ -43,17 +40,24 @@ This project aims to classify patient risk levels (specifically mortality) durin
   - 9% were admitted to the ICU, nearly half of whom died.
 - **Temporal Trends**: Peak death rate occurred from April to August 2020.
 
-##  Data Considerations
+##  ⚠️Data Considerations
+- Class Imbalance: Addressed using oversampling; future iterations may benefit from SMOTE or ensemble methods to reduce noise and improve minority-class prediction.
 
-- Oversampling was used to address class imbalance, which may have introduced noise.
-- Future improvements could include undersampling or synthetic sampling (e.g., SMOTE).
-- Feature selection and multicollinearity assessment were considered using Statsmodels and correlation plots.
+- Multicollinearity: Checked using correlation matrices; predictors with high variance inflation were monitored.
 
-##  Lessons Learned
+- Feature Engineering: Dummy variables and recoding applied where appropriate.
 
-- High accuracy does not imply reliability, especially with imbalanced data.
-- Prioritizing recall on minority/high-risk classes (like "Dead") is critical in health-related classification problems.
-- Logistic regression, though simple, can be robust and interpretable when used thoughtfully.
+## ✅ Conclusions & Recommendations
+- Prioritize Recall for High-Risk Outcomes: In healthcare applications, especially mortality risk classification, high recall for the minority (deceased) class is more critical than overall accuracy.
+
+- Logistic Regression Remains Valuable: Simple models like logistic regression can outperform complex classifiers when interpretability and balanced recall are prioritized.
+
+- Improve Imbalanced Learning Approaches: Future improvements could include cost-sensitive learning, SMOTE, or ensemble methods like XGBoost with class weighting.
+
+- Support Policy with Data: Age, comorbidity presence, and obesity emerged as strong indicators of risk—these findings can help guide triage, vaccination prioritization, or public health resource allocation.
+
+- Extend Beyond Mortality: Similar approaches could be adapted to model hospitalization, ICU admission, or long-COVID outcomes using richer longitudinal datasets.
+
 
 ##  Repository
 
