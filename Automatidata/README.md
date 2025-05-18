@@ -1,14 +1,61 @@
-Automatidata works with its clients to transform their unused and stored data into useful solutions, such as performance dashboards, customer-facing tools, strategic business insights, and more. They specialize in identifying a client’s business needs and utilizing their data to meet those business needs. 
-Automatidata is consulting for the New York City Taxi and Limousine Commission (TLC). New York City TLC is an agency responsible for licensing and regulating New York City's taxi cabs and for-hire vehicles.We are asked to build a machine learning model to predict if a customer will not leave a tip. They want to use the model in an app that will alert taxi drivers to customers who are unlikely to tip, since drivers depend on tips.
+## NYC Taxi Tipping Behavior Prediction
+**Automatidata** partners with clients to transform unused or stored data into actionable insights and practical tools—including performance dashboards, customer-facing applications, and strategic analytics. In this project, Automatidata is consulting for the New York City Taxi and Limousine Commission (TLC), the agency responsible for regulating NYC's yellow taxis and for-hire vehicles.
 
-- The goal of this project was to create a multiple linear regression and random forest model to predict high rider gratuity or not. This project utilized yellow taxi trips taken in New York City during 2017. The final random forest model performed with 68% accuracy and 67% precision determining what features were most important in separating low tippers from high tippers. 
-from this dataset: 
-- According to salary.com the average salary for a New York Taxi Driver is around $45,000. This salary is significantly low compared to a median rent value of $6,500 per month. It is important to understand what factors encourage riders to leave tips in order to help drivers obtain a livable wage.
-- The NYC Taxi and Limousine Commission data came from NYC.gov. The data consisted of approximately 22k unique trips and 18 features. The features included information on trip duration and destination, vendor used, toll information, and payment type. The bar chart below shows the breakdown of how many generous tippers (>20%) versus non-generous tippers that exist in the data set.
+## Project Overview
+TLC requested a machine learning model to predict whether a passenger is likely to leave a tip, with the goal of alerting taxi drivers in real-time through an app. Given that many drivers depend heavily on gratuities to make a living, identifying low- and high-tipping passengers could help drivers better manage their income potential.
+
+The model was developed using NYC Yellow Taxi trip data from 2017, consisting of over 22,000 unique trips and 18 features. These include trip duration, distance, tolls, fare amounts, payment type, and vendor information.
+
+## Motivation
+According to Salary.com, the average annual salary for a New York City taxi driver is about $45,000, while median monthly rent exceeds $6,500. This economic imbalance emphasizes the need to better understand factors that influence tipping behavior, potentially empowering drivers to optimize income and improve service outcomes.
+
+## Data Preparation
+Key data processing steps included:
+
+#### Feature Engineering:
+
+  - Calculated tip percentage and flagged "generous tippers" (>20% tip).
+  - Created a binary variable for rush hour trips.
+
+#### Data Cleaning:
+
+  - Removed redundant or irrelevant columns.
+  - Converted data types as needed for model compatibility.
+
+A bar chart was generated to visualize the ratio of generous to non-generous tippers 
+
 ![image](https://github.com/RoniF-pixel/Projects/assets/121540731/c348cb1e-8e1b-4d7d-92f1-f94a42b0d1c2)
 
-- Features were engineered to represent tip percent, generous tippers and if a ride was taken during rush hour or not. Multiple redundant columns were dropped and reformatted into the proper data type.
-- A random forest model comprising 300 decision trees was used to determine feature importance in who would tip generously or not. The below plot shows that VendorID, predicted_fare, mean_duration, and mean_distance are the most important features, but we don't know how they influence tipping. This would require further exploration. It is interesting that VendorID is the most predictive feature. This seems to indicate that one of the two vendors tends to attract more generous customers. The overall model performed with 68% accuracy and 67% precision. 
+## Modeling Approach
+Two models were developed:
+
+  1. Multiple Linear Regression – Provided a baseline and interpretability.
+  2. Random Forest Classifier – A more robust, non-linear approach, comprising 300 decision trees.
+
+The random forest model achieved:
+
+  - 68% accuracy
+  - 67% precision (in identifying generous tippers)
+
+## Feature Importance
+The most influential features identified by the random forest model were:
+
+    - VendorID
+    - predicted_fare
+    - mean_duration
+    - mean_distance
+
+Interestingly, VendorID was the most predictive variable, suggesting that certain vendors may attract more generous passengers—a finding that warrants further investigation.
+
 ![auto-important](https://github.com/RoniF-pixel/Projects/assets/121540731/107ae1fd-16c1-4268-9b57-12332020a71a)
 
-- This model can benefit Taxi Drivers in knowing if they will be tipped generously or not; however, running a parametric model will help to determine how much each variable will influence the actual price of the tip. In the future, adding more information on a rider’s past tipping behavior may also be beneficial in helping the stakeholder address their business problem. 
+
+## Implications and Next Steps
+This model provides a practical tool for NYC taxi drivers to anticipate tipping behavior and manage expectations. However:
+
+   - A parametric model could help quantify the exact influence of each variable on tip size.
+   - Adding rider history (e.g., previous tipping behavior) could significantly enhance model performance.
+   - Further exploration is needed to understand why certain features (like VendorID) matter most.
+
+## Conclusion
+This project highlights how machine learning can support real-world decision-making in urban transport settings. By helping drivers anticipate tipping likelihood, the model contributes toward making taxi driving a more sustainable and data-informed profession.
