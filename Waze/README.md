@@ -1,18 +1,73 @@
-Waze’s free navigation app makes it easier for drivers around the world to get to where they want to go. We help prevent user churn on the Waze app. Churn quantifies the number of users who have uninstalled the Waze app or stopped using the app. This project focuses on monthly user churn. Typically, high retention rates indicate satisfied users who repeatedly use the Waze app over time. Developing a churn prediction model will help prevent churn, improve user retention, and grow Waze’s business. If Waze can identify a segment of users who are at high risk of churning, it can proactively engage these users with special offers to try and retain them. Otherwise, Waze may lose these users without knowing why. 
+# 🚗 Waze App Churn Prediction — Google Advanced Data Analytics Capstone
+## Project: Predicting Monthly User Churn to Improve Retention Strategies
 
-- The goal of this project was to develop a churn prediction model that helps prevent churn, improve user retention, and grow Waze’s business. The final XGBoost model performed with 81% accuracy and 42% precision determining what features were most important in separating retained users from churned users. This model fit the data even better than the random forest model. The recall score is 17% which is nearly double the recall score from the logistic regression model, and it's almost 50% better than the random forest model's recall score, while maintaining a similar accuracy and precision score.
-- The data consisted of approximately 15k time using the app and 13 features. The features included information on label(churned or retained), session(# of opening the app), type of device(Android, iPhone), n_days_after_onboarding, total_navigations_fav1, total_navigations_fav2 (fav=favorite place), driven_km_drives(Total km driven during the month), duration_minutes_drives, activity_days, and driving_days(at least 1 km).
+As part of the Google Advanced Data Analytics Certificate program, I analyzed user activity data from Waze, a global navigation app, to develop a model that predicts monthly user churn—defined as users uninstalling or ceasing to use the app.
+
+Understanding user churn is vital for retention and growth. Identifying users at high risk of churning enables proactive engagement strategies such as targeted promotions or product interventions.
+
+## 🔍 Project Objectives
+- Predict whether a user will churn or be retained based on app usage patterns.
+- Understand the drivers of churn through data exploration and feature engineering.
+- Compare performance across logistic regression, random forest, and XGBoost models.
+
+## 📊 Dataset Overview
+- ~15,000 user records with 13 initial features.
+- Key variables included:
+   - label (churned or retained),
+   - session (app opens),
+   - n_days_after_onboarding,
+   - driven_km_drives, duration_minutes_drives, activity_days, driving_days,
+   - Device type (iOS or Android),
+   - Favorite place navigations (total_navigations_fav1, fav2).
 
 ![image](https://github.com/RoniF-pixel/Projects/assets/121540731/10090c6f-a260-470a-8885-4b2ec158c967)
 
+## 🔧 Feature Engineering
+To enhance predictive power, several new features were engineered:
+- km_per_drive: total km divided by number of drives.
+- km_per_hour: proxy for driving speed or route type.
+- percent_sessions_in_last_month: recency of use.
+- total_sessions_per_day: user engagement level.
+- percent_of_sessions_to_favorite: user loyalty to specific destinations.
+- professional_driver: binary indicator separating frequent/high-volume users.
 
-- We found out that the users who churned drove farther and longer in fewer days than retained users. They also used the app about half as many times as retained users over the same period.
-- Less than 18% of users churned, and ~82% were retained.
-- We engineered features to see their impact on churning called kilometers per driving day, percent_sessions_in_last_month that represents the percentage of each user's total sessions that were logged in their last month of use, total_sessions_per_day, km_per_hour, km_per_drive, and percent_of_sessions_to_favorite. Then a new, binary feature called professional_driver that separates professional drivers from other driversThe churn rate for professional drivers is 7.6%, while the churn rate for non-professionals is 19.9%.
-- The XGBoost model fit the data better than the random forest model. The recall score is nearly double the recall score from the logistic regression model, and it's almost 50% better than the random forest model's recall score, while maintaining a similar accuracy and precision score.
-- The model predicted three times as many false negatives than it did false positives, and it correctly identified only 16.6% of the users who actually churned.
+Notably, professional drivers had a churn rate of just 7.6%, compared to 19.9% among other users.
+
+## 🤖 Modeling & Evaluation
+Three models were built and compared:
+
+#### 1. Logistic Regression
+- Baseline model.
+- Lower recall and AUC, limited non-linear pattern detection.
+
+#### 2. Random Forest
+- Improved accuracy and feature importance interpretability.
+- Recall remained relatively low.
+
+#### 3. XGBoost (Final Model)
+- Accuracy: 81%
+- Precision: 42%
+- Recall: 17%
+- Outperformed both logistic regression and random forest on recall—nearly double the recall of logistic regression, and 50% better than the forest model.
+- Model Limitations:
+     - Predicted 3x more false negatives than false positives.
+     - Only correctly identified ~16.6% of actual churners.
 
 ![image](https://github.com/RoniF-pixel/Projects/assets/121540731/3f0eefab-39f9-402a-a48a-f6631df6f38e)
 
-- If the model is used to drive consequential business decisions, it is not a strong enough predictor, as made clear by its poor recall score. However, if the model is only being used to guide further exploratory efforts, then it can have value.
-- New features could be engineered to try to generate better predictive signal, as they often do if we have domain knowledge. In the case of this model, the engineered features made up over half of the top 10 most-predictive features used by the model. It could also be helpful to reconstruct the model with different combinations of predictor variables to reduce noise from unpredictive features.
+## 🧠 Key Takeaways
+- Churners used the app less frequently but drove farther and longer per session than retained users.
+- Engineered features dominated the model’s top predictors, reinforcing the value of domain-informed feature engineering.
+- Despite solid accuracy and precision, low recall limits the model's effectiveness for high-stakes business decisions.
+- The model still holds value for guiding exploratory analysis and identifying patterns in user behavior.
+
+## 📂 Repository
+[Code notebooks include](https://github.com/RoniF-pixel/Python-Projects/blob/main/Waze/Waze.ipynb):
+EDA, Feature engineering logic, Model training and evaluation, Visualizations of feature importance and churn patterns
+
+##  Next Steps
+- Explore ensemble stacking or SMOTE to address class imbalance.
+- Improve recall via alternative thresholds or cost-sensitive learning.
+- Collaborate with product teams to validate new features using domain insights.
+
+In this project I used several data science techniques—from wrangling and exploration to modeling and critical evaluation—applied to a **realistic**, **business-relevant challenge** in user engagement analytics.
