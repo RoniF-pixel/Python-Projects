@@ -3,7 +3,7 @@
 This project applies rigorous time series analysis techniques to forecast monthly sales of Office Supplies using transactional retail data spanning January 2011 to December 2014. The goal is to build robust ARIMA and SARIMAX models to provide actionable forecasts that capture both trend and seasonal patterns.
 
 ## 🗂 Data Description
-The dataset originates from a comprehensive retail transaction record. For this analysis, data was filtered to include only the Office Supplies category and aggregated to obtain total monthly sales figures.
+The dataset originates from a comprehensive retail transaction record from a Superstore spanning 2015 to 2018. For this analysis, data was filtered to include only the Office Supplies category and aggregated to obtain total monthly sales figures.
 
 | **Order Date** | **Sales (USD)** |
 | -------------- | --------------- |
@@ -63,7 +63,7 @@ The dataset originates from a comprehensive retail transaction record. For this 
 - Tools: Jupyter Notebook
 
 
-## 👤 Author
+##  Author
 **Ronak Fathi**
 
 Statistical Consultant & Data Analyst
