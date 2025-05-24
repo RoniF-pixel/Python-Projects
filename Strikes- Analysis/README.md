@@ -24,7 +24,11 @@ We aim to:
 - Used isnull() to identify missing metadata.
 - Visualized missing data points on a latitude–longitude map using Plotly.
 
+![missing data-globe](https://github.com/user-attachments/assets/b1267afb-436d-46e0-a626-5efe581d6ebe)
+
 Finding: Most missing entries originated from offshore locations outside U.S. landmass.
+
+![missing data-usa](https://github.com/user-attachments/assets/a4f631d7-32fc-428d-8f3f-536369ffe1fc)
 
 ---
 
