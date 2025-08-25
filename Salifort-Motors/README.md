@@ -62,7 +62,7 @@ I developed three classification models to predict employee attrition:
 ![downloadc7](https://github.com/user-attachments/assets/f3d14bfd-cefd-4d60-bbfd-83c49a276a85)
 
 ## 📂 Repository: decision-capstone
-[File](https://github.com/RoniF-pixel/Python-Projects/blob/main/Salifort%20Motors/Salifort%20Motors.ipynb):  (includes code, data, and model artifacts)
+[File]((https://github.com/RoniF-pixel/Python-Projects/tree/main/Salifort-Motors)):  (includes code, data, and model artifacts)
 
 This project demonstrates my end-to-end data science capabilities—from data cleaning and EDA to thoughtful feature engineering and model evaluation. It highlights my ability to recognize and address real-world challenges like data leakage and biased predictors while building models that support business decision-making.
 
