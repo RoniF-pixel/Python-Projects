@@ -4,7 +4,7 @@
 
 This project aims to classify patient risk levels (specifically mortality) during the COVID-19 pandemic using clinical and demographic variables. We implemented various machine learning models to predict patient outcomes and performed exploratory data analysis to uncover meaningful relationships between comorbidities, symptoms, and COVID-19 severity.
 
-##  📌Project Overview
+##  Project Overview
 
 - **Objective**: Predict mortality risk among COVID-19 patients based on symptoms, comorbidities, and demographic data.
 - **Tools**: Python, Scikit-learn, Statsmodels, Pandas, Matplotlib, Seaborn, Tableau
@@ -15,7 +15,7 @@ This project aims to classify patient risk levels (specifically mortality) durin
      - Confusion matrix analysis and recall prioritization
 
 
-##  ⚙️Key Models & Performance
+##  Key Models & Performance
 
 | Model               | Accuracy | Recall ("Dead") | Recall ("Not Dead") | Comments                                                                 |
 |--------------------|----------|------------------|----------------------|--------------------------------------------------------------------------|
@@ -26,7 +26,7 @@ This project aims to classify patient risk levels (specifically mortality) durin
 
  **Conclusion**: While tree-based models achieved the highest accuracy, their recall for the "Dead" class was insufficient, risking dangerous false negatives. Logistic regression offered the best balance between sensitivity and specificity for high-risk classification.
 
-##  🔍Key Findings
+##  Key Findings
 
 - **Mortality**: 7.3% of all patients died. Of those, 70.5% were confirmed COVID-19 carriers.
 - **Infection Rate**: 37.5% of patients were COVID-19 positive. Among them, ~14% died.
@@ -40,14 +40,14 @@ This project aims to classify patient risk levels (specifically mortality) durin
   - 9% were admitted to the ICU, nearly half of whom died.
 - **Temporal Trends**: Peak death rate occurred from April to August 2020.
 
-##  ⚠️Data Considerations
+##  Data Considerations
 - Class Imbalance: Addressed using oversampling; future iterations may benefit from SMOTE or ensemble methods to reduce noise and improve minority-class prediction.
 
 - Multicollinearity: Checked using correlation matrices; predictors with high variance inflation were monitored.
 
 - Feature Engineering: Dummy variables and recoding applied where appropriate.
 
-## ✅ Conclusions & Recommendations
+##  Conclusions & Recommendations
 - Prioritize Recall for High-Risk Outcomes: In healthcare applications, especially mortality risk classification, high recall for the minority (deceased) class is more critical than overall accuracy.
 
 - Logistic Regression Remains Valuable: Simple models like logistic regression can outperform complex classifiers when interpretability and balanced recall are prioritized.
