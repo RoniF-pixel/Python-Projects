@@ -1,4 +1,4 @@
-# 🎯 TikTok Video Claim Classification — Google Advanced Data Analytics Capstone
+#  TikTok Video Claim Classification — Google Advanced Data Analytics Capstone
 ## Project: Analyzing User Engagement and Predictive Moderation on TikTok
 
 This project was completed as part of the Google Advanced Data Analytics Certificate. I analyzed a dataset of approximately 19,000 TikTok videos with the goal of supporting content moderation by identifying whether a video presents a **"Claim"** or an **"Opinion"**.
@@ -7,7 +7,7 @@ TikTok receives a high volume of user reports flagging content for potential mis
 
 ![Untitled](https://github.com/RoniF-pixel/Projects/assets/121540731/070ae4ab-61d3-4132-be21-7fd8a9d6088f)
 
-## 🔍 Project Objectives
+##  Project Objectives
 #### 1. View Count Comparison: Verified vs. Unverified Accounts
 - **Goal**: Determine whether verified accounts receive more views than unverified ones.
 - **Method**: Hypothesis testing
@@ -36,7 +36,7 @@ TikTok receives a high volume of user reports flagging content for potential mis
     - Downloads
       These indicate that user engagement metrics were highly predictive of the nature of the video content.
 
-## 🧠 Key Takeaways
+##  Key Takeaways
 - Demonstrated the ability to handle a real-world classification problem involving social media content moderation.
 - Applied statistical hypothesis testing, feature engineering, and machine learning (logistic regression, random forest, XGBoost).
 - Addressed imbalance and potential bias by interpreting engagement-driven predictions carefully.
@@ -44,7 +44,7 @@ TikTok receives a high volume of user reports flagging content for potential mis
 
 ![image](https://github.com/RoniF-pixel/Projects/assets/121540731/fedccf58-6eb0-491b-871d-3c4ba9e9bd99)
 
-## 📂 Repository & Files
+##  Repository & Files
 - Jupyter Notebook: [tiktok-analysis.ipynb](https://github.com/RoniF-pixel/Python-Projects/blob/main/TikTok/Tik%20Tok.ipynb)
 Includes EDA, model training, evaluation metrics, and visualizations.
 
