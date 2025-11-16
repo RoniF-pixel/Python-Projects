@@ -1,9 +1,9 @@
-# ⚡ Lightning Strike Data Analysis (NOAA - August 2018)
+#  Lightning Strike Data Analysis (NOAA - August 2018)
 This project analyzes lightning strike data across the United States during August 2018. Using NOAA datasets, we merge, clean, and explore spatial and temporal patterns, perform hypothesis testing, and apply time series forecasting using a SARIMA model to understand short- and long-term dynamics in lightning activity.
 
 ---
 
-## 📊 Project Overview
+##  Project Overview
 The analysis focuses on two datasets:
 
 - **Dataset 1**: Includes geospatial data with columns: date, center_point_geom, longitude, latitude, number_of_strikes.
@@ -18,7 +18,7 @@ We aim to:
 
 ---
 
-## 🔧 Data Preparation
+##  Data Preparation
 
 - Merged datasets using pandas.merge().
 - Used isnull() to identify missing metadata.
@@ -32,7 +32,7 @@ Finding: Most missing entries originated from offshore locations outside U.S. la
 
 ---
 
-## 🌍 Spatial Join
+##  Spatial Join
 
 - Converted coordinates into Shapely Point objects.
 - Loaded U.S. state polygons via GeoPandas.
@@ -40,7 +40,7 @@ Finding: Most missing entries originated from offshore locations outside U.S. la
 
 ---
 
-## 🏷️ Feature Engineering
+##  Feature Engineering
 
 - Parsed timestamps, extracted day-of-week.
 - Created binary indicators: is_weekend, is_usa.
@@ -48,14 +48,14 @@ Finding: Most missing entries originated from offshore locations outside U.S. la
 
 ---
 
-## 📉 Descriptive Statistics
+##  Descriptive Statistics
 
 - U.S. strikes: ~324K
 - Non-U.S. strikes (offshore): ~394K
 
 ---
 
-## 🧪 Hypothesis Testing
+##  Hypothesis Testing
 **Weekday vs Weekend (Temporal)**
     - Two-sample t-test shows significantly fewer strikes on weekends than weekdays.
     - p < 0.001, t < 0
@@ -68,7 +68,7 @@ Finding: Most missing entries originated from offshore locations outside U.S. la
 
 ---
 
-## 📆 Temporal Patterns
+##  Temporal Patterns
 - Lightning activity peaked:
       - August 17: ~1M strikes
       - August 28: ~1.05M strikes
@@ -77,7 +77,7 @@ Finding: Most missing entries originated from offshore locations outside U.S. la
 
 ---
 
-## ⏱️ Time Series Forecasting (SARIMA Model)
+##  Time Series Forecasting (SARIMA Model)
 **Model Fit Summary**
       - Model Used: SARIMA
       - AIC: 750.25 → better than baseline ARIMA(0,1,0)
@@ -123,7 +123,7 @@ Finding: Most missing entries originated from offshore locations outside U.S. la
 
 ---
 
-## 🧰 Tools & Libraries
+##  Tools & Libraries
 - Data Handling: pandas, numpy
 - Modeling & Stats: statsmodels, scipy
 - Geospatial Analysis: geopandas, shapely
@@ -132,7 +132,7 @@ Finding: Most missing entries originated from offshore locations outside U.S. la
 
 ---
 
-## 📌 Key Takeaways
+##  Key Takeaways
 - Offshore strikes were the main source of missing metadata.
 - Weekends had significantly fewer strikes than weekdays.
 - Central U.S. exhibited the highest strike intensities.
@@ -141,7 +141,7 @@ Finding: Most missing entries originated from offshore locations outside U.S. la
 
 ---
 
-### 👩 Author
+###  Author
 **Ronak Fathi**
 Statistical analysis • Geospatial modeling • Forecasting • Data storytelling
 
