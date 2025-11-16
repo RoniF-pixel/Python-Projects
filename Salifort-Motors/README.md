@@ -1,12 +1,12 @@
-# 📊 Employee Retention Analysis — Google Advanced Data Analytics Capstone
+#  Employee Retention Analysis — Google Advanced Data Analytics Capstone
 ## Project: Predicting Employee Attrition at Salifort Motors
 
 As part of the Google Advanced Data Analytics Certificate, I completed a capstone project analyzing employee attrition data for a fictional alternative energy vehicle manufacturer, Salifort Motors. The company sought insights into employee retention and requested a predictive model to help identify at-risk employees and reduce turnover.
 
-## 🧭 Objective
+##  Objective
 To identify key drivers of employee attrition and develop a predictive model to flag employees at risk of leaving, enabling targeted interventions to improve satisfaction and retention.
 
-## 📌 Key Findings from Exploratory Data Analysis (EDA)
+##  Key Findings from Exploratory Data Analysis (EDA)
 - Two main attrition profiles emerged:
    - Dissatisfied employees with shorter tenures
    - Highly satisfied employees with medium-length tenures
@@ -22,7 +22,7 @@ To identify key drivers of employee attrition and develop a predictive model to 
 
 - Data patterns suggested that poor management and workload imbalance were central to attrition
 
-## 🧠 Modeling Approach
+##  Modeling Approach
 I developed three classification models to predict employee attrition:
 
 1. Logistic Regression
@@ -41,12 +41,12 @@ I developed three classification models to predict employee attrition:
       - Full feature set
       - Engineered feature set, addressing potential data leakage
 
-## 🔍 Addressing Data Leakage
+##  Addressing Data Leakage
 - Certain features (e.g., satisfaction_level and average_monthly_hours) could contain leakage, possibly reflecting post-decision behavior (e.g., reduced hours after deciding to quit).
 
 - I engineered a new binary feature called overworked, defined using project count and monthly hours thresholds, to better capture latent burnout without direct leakage.
 
-## ✅ Final Results
+##  Final Results
 - Improved Decision Tree Model (with engineered features):
 
    - AUC: 93.8%
