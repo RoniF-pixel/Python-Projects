@@ -13,7 +13,7 @@ We aim to:
 
 - Merge the datasets into a unified DataFrame.
 - Explore and visualize strike patterns.
-- Perform time series forecasting using SARIMAX.
+- Perform time series forecasting using SARIMA.
 - Evaluate model performance and residuals.
 
 ---
